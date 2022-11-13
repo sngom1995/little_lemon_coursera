@@ -131,6 +131,10 @@ const MenuItems = () => {
 const menuStyles = StyleSheet.create({
   container: {
     flex: 0.95,
+
+    justifyContent: 'flex-start',
+
+    backgroundColor: '#333333',
   },
   innerContainer: {
     paddingHorizontal: 40,
@@ -157,6 +161,7 @@ const menuStyles = StyleSheet.create({
     fontSize: 20,
     flexWrap: 'wrap',
     textAlign: 'center',
+    
   },
   button: {
     fontSize: 22,

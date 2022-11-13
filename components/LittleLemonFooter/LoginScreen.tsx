@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
 import * as React from 'react';
 import {ScrollView, Text, StyleSheet, TextInput, Alert, Pressable} from 'react-native';
+//import Welcome from '../Welcome';
 
-export default function LoginScreen() {
+const  LoginScreen = ({navigation}) => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [showFom, setShowForm ] = React.useState(false);
@@ -10,8 +11,10 @@ export default function LoginScreen() {
     <ScrollView style={styles.container}>
      {
         !showFom &&  <>
+        
         <Text style={styles.headerText}>Welcome to Little Lemon</Text>
         <Text style={styles.regularText}>Login to continue </Text>
+        
         <TextInput
               style={styles.input}
               value={email}
@@ -34,9 +37,10 @@ export default function LoginScreen() {
      {
         showFom && <Text style={styles.regularText}> Log Out</Text>
      }
-        <Pressable style={styles.button} onPress={() =>{setShowForm(!showFom)}}>
-           {!showFom && <Text style={styles.buttonText}> Log in</Text>}
-           {showFom && <Text style={styles.buttonText}> Log out</Text>}
+        <Pressable style={styles.button} onPress={() =>navigation.navigate('Menu')}>
+           {/* {!showFom && <Text style={styles.buttonText}> Log in</Text>}
+           {showFom && <Text style={styles.buttonText}> Log out</Text>} */}
+           <Text style={styles.buttonText}> Log in</Text>
         </Pressable>
     </ScrollView>
   );
@@ -45,6 +49,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#333333',
   },
   headerText: {
     padding: 40,
@@ -84,3 +89,5 @@ button: {
     fontSize: 32,
   },
 });
+
+export default LoginScreen;

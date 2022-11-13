@@ -3,19 +3,24 @@
 /* eslint-disable react-native/no-inline-styles */
 
 
-import {Text, View} from 'react-native';
+import React from 'react';
+import {Image,  View} from 'react-native';
 
 const LittleLemonHeader = () => {
   return (
     <View
-        style={{flex: 0.10, backgroundColor: '#EE9972', justifyContent: 'center'}}
+        style={{flex: 0.10, backgroundColor: '#EE9972', justifyContent: 'center', paddingLeft:50}}
     >
-      <Text
-        style={{paddingLeft:100, fontSize:30, color: 'black', justifyContent:'center'}} numberOfLines={2}
-      >
-       <Text
-       style={{fontWeight:'bold'}}> Little Lemon</Text>
-    </Text>
+     <Image 
+        style={{
+            height: 50,
+            width: 300,
+            resizeMode: 'contain',
+            }}
+         source={require('../img/LIttleLemonLogo.png')}
+         accessible={true}
+         accessibilityLabel={'Lottle Lemon Logo'}
+         />
     </View>
   );
 };
